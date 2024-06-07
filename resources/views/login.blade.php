@@ -8,16 +8,15 @@
     @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="h-full bg-purple-700	">
-    <div class="flex min-h-full flex-row justify-center ">
-        <img class="" src="https://visualmodo.com/wp-content/uploads/2022/08/5-Best-Gaming-Website-Templates-Design-Made-Easy.png" alt="Your Company">
+<body class="h-full bg-purple-900	">
+    <div class="flex min-h-full flex-row justify-center p-10 shadow-lg	">
+        <img class="rounded-tl-xl rounded-bl-xl w-3/4" src="{{ asset('images/bghd.webp') }}" >
         <!-- Login Kanan-->
-        <div class="bg-white flex min-h-full flex-col justify-center p-20 xl:px-24">
+        <div class="rounded-tr-xl rounded-br-xl bg-white w-screen flex min-h-full flex-col justify-center p-20 xl:px-24">
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-              <img class="mx-auto h-10 w-auto" src="https://moogie.id/assets/images/1680512565_28bd505aa10e4d552ac2.png" alt="Your Company">
+              <img class="mx-auto h-10 w-auto" src="https://moogie.id/assets/images/1680512565_28bd505aa10e4d552ac2.png" >
               <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
             </div>
-        
             <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
               <form class="space-y-6" action="#" method="POST">
                 <div>

@@ -74,7 +74,6 @@
             </div>
           </div>
         </div>
-      
         <!-- Mobile menu, show/hide based on menu state. -->
         <div x-show="isOpen" class="sm:hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
@@ -83,5 +82,25 @@
           </div>
         </div>
       </nav>
+
+      <div class="max-w-4xl mx-auto mt-10">
+        <h2 class="text-2xl font-bold text-gray-900">Your Profile</h2>
+        <div class="mt-6">
+            <dl class="space-y-4">
+                <div>
+                    <dt class="text-sm font-medium text-gray-500">Name</dt>
+                    <dd class="mt-1 text-sm text-gray-900">{{ $user->name }}</dd>
+                </div>
+                <div>
+                    <dt class="text-sm font-medium text-gray-500">Email</dt>
+                    <dd class="mt-1 text-sm text-gray-900">{{ $user->email }}</dd>
+                </div>
+                <!-- Tambahkan field tambahan sesuai kebutuhan -->
+            </dl>
+        </div>
+        <div class="mt-6">
+            <a href="{{ route('edit.profile') }}" class="text-indigo-600 hover:text-indigo-900">Edit Profile</a>
+        </div>
+    </div>
 </body>
 </html>

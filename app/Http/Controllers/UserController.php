@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+
 class UserController extends Controller
 {
     public function store(Request $request)
@@ -48,5 +49,36 @@ class UserController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
+    }
+
+    public function show()
+    {
+        $user = Auth::user();
+        return view('profile', compact('user'));
+    }
+    
+        public function edit()
+    {
+        $user = Auth::user();
+        return view('editprofile', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            // Tambahkan validasi field tambahan sesuai kebutuhan
+        ]);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            // Tambahkan field tambahan sesuai kebutuhan
+        ]);
+
+        return redirect()->route('profile')->with('success', 'Profile updated successfully.');
     }
 }

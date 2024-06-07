@@ -76,6 +76,11 @@ class UserController extends Controller
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
+            'phonenumber' => $request->phonenumber,
+            'age' => $request->age,
+            'datebirth' => $request->datebirth,
+            'gender' => $request->gender,
+            
             // Tambahkan field tambahan sesuai kebutuhan
         ]);
 

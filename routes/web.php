@@ -22,3 +22,5 @@ Route::post('/create', [UserController::class, 'store'])->name('register');
 Route::get('/profile', [UserController::class, 'show'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [UserController::class, 'edit'])->name('edit.profile')->middleware('auth');
 Route::post('/profile/edit', [UserController::class, 'update'])->name('update.profile')->middleware('auth');
+
+Route::post('/signout', [UserController::class, 'logout'])->name('logout');

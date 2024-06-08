@@ -8,12 +8,12 @@
     @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
+<body class="bg-zinc-100	">
     <nav class="bg-gray-800 " x-data="{ isOpen: false }">
         
     </div>
 
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class=" mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <!-- Mobile menu button-->
@@ -85,48 +85,40 @@
           </div>
         </div>
       </nav>
-      
+    
+        <div class="max-w-4xl mx-auto mt-10 p-10 shadow-lg rounded-lg w-3/5 bg-white">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Profile</h2>
+          <div class="mt-6">
+              <dl class="space-y-4">
+                  <div class="bg-gray-50 p-4 rounded-md">
+                      <dt class="text-sm font-medium text-gray-500">Name</dt>
+                      <dd class="mt-1 text-sm text-gray-900">{{ $user->name }}</dd>
+                  </div>
+                  <div class="bg-white p-4 rounded-md">
+                      <dt class="text-sm font-medium text-gray-500">Email address</dt>
+                      <dd class="mt-1 text-sm text-gray-900">{{ $user->email }}</dd>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-md">
+                      <dt class="text-sm font-medium text-gray-500">Age</dt>
+                      <dd class="mt-1 text-sm text-gray-900">{{ $user->age }}</dd>
+                  </div>
+                  <div class="bg-white p-4 rounded-md">
+                      <dt class="text-sm font-medium text-gray-500">Phone Number</dt>
+                      <dd class="mt-1 text-sm text-gray-900">{{ $user->phonenumber }}</dd>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-md">
+                      <dt class="text-sm font-medium text-gray-500">Date of Birth</dt>
+                      <dd class="mt-1 text-sm text-gray-900">{{ $user->datebirth }}</dd>
+                  </div>
+                  <div class="bg-white p-4 rounded-md">
+                      <dt class="text-sm font-medium text-gray-500">Gender</dt>
+                      <dd class="mt-1 text-sm text-gray-900">{{ $user->gender }}</dd>
+                  </div>
+              </dl>
+          </div>
+          <div class="mt-6">
+              <a href="{{ route('edit.profile') }}" class="text-indigo-600 hover:text-indigo-900">Edit Profile</a>
+          </div>
       </div>
-
-      <div class="p-6 mt-10">
-        <div class=" justify-center rounded-lg border shadow-lg p-6" >
-            <div class="">
-              <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Profile</h2>
-                <h3 class="text-lg font-medium text-gray-800">Personal Information</h3>
-                <dl class="mt-4 space-y-2">
-                    <div>
-                        <dt class="text-sm font-medium text-gray-500">Name</dt>
-                        <dd class="mt-1 text-sm text-gray-900">{{ $user->name }}</dd>
-                    </div>
-                    <div>
-                        <dt class="text-sm font-medium text-gray-500">Email</dt>
-                        <dd class="mt-1 text-sm text-gray-900">{{ $user->email }}</dd>
-                    </div>
-                    <div>
-                        <dt class="text-sm font-medium text-gray-500">Age</dt>
-                        <dd class="mt-1 text-sm text-gray-900">{{ $user->age }}</dd>
-                    </div>
-                    <div>
-                        <dt class="text-sm font-medium text-gray-500">Phone Number</dt>
-                        <dd class="mt-1 text-sm text-gray-900">{{ $user->phonenumber }}</dd>
-                    </div>
-                </dl>
-            </div>
-            <div class="p-4 my ">
-                <dl class="mt-4 space-y-2">
-                    <div>
-                        <dt class="text-sm font-medium text-gray-500">Date of Birth</dt>
-                        <dd class="mt-1 text-sm text-gray-900">{{ $user->datebirth }}</dd>
-                    </div>
-                    <div>
-                        <dt class="text-sm font-medium text-gray-500">Gender</dt>
-                        <dd class="mt-1 text-sm text-gray-900">{{ $user->gender }}</dd>
-                    </div>
-                </dl>
-            </div>
-        </div>
-        <div class="mt-6 text-center">
-            <a href="{{ route('edit.profile') }}" class="inline-block bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2">Edit Profile</a>
-        </div>
 </body>
 </html>

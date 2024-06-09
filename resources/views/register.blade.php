@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="h-full bg-purple-900	">
+<body class="min-h-full bg-purple-900 ">
     <div class="flex min-h-full flex-row justify-center p-10 shadow-lg">
         <img class="rounded-tl-xl rounded-bl-xl w-3/4" src="{{ asset('images/bghd.webp') }}" >
         <!-- Login Kanan-->
